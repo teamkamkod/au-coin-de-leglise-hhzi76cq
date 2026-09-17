@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Au coin de l'Église – Restaurant à Montaigu (02820)</title>
+<meta name="description" content="Restaurant convivial à Montaigu : plats soignés, terrasse ombragée et accueil chaleureux. 11 Rue de l'Église. Réservez au +33782183930.">
+<meta name="keywords" content="restaurant Montaigu, cuisine traditionnelle Montaigu, repas convivial Montaigu, restaurant près de l'église Montaigu, terroir vendéen, table locale Montaigu">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F5F5B;
+    --secondary: #C97B5A;
+    --background: #FBF6EC;
+    --text: #2E2A26;
+    --cta: #C97B5A;
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Karla', sans-serif;
+    --radius: 6px;
+    --max-width: 1200px;
+    --spacing-section: 100px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    line-height: 1.2;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  .container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .section-text {
+    font-size: 1.05rem;
+    color: #5a5450;
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  /* CTA BUTTON */
+  .cta {
+    display: inline-block;
+    background-color: var(--cta);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    text-align: center;
+  }
+  .cta:hover { background-color: #b56848; transform: translateY(-2px); }
+
+  .cta-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .cta-outline:hover { background-color: var(--primary); color: #fff; }
+
+  /* NAVIGATION */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(251, 246, 236, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(31, 95, 91, 0.1);
+    padding: 0 5%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--primary);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  nav ul li a {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  nav ul li a:hover { color: var(--primary); }
+
+  nav ul li a.cta {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.88rem;
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 1100;
+  }
+  .burger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* MOBILE NAV */
+  @media (max-width: 767px) {
+    .burger { display: flex; }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background-color: rgba(251, 246, 236, 0.99);
+      padding: 1.5rem 5%;
+      gap: 1.25rem;
+      border-bottom: 1px solid rgba(31, 95, 91, 0.1);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    nav ul.open {
+      display: flex;
+    }
+
+    nav ul li a.cta {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  @media (min-width: 768px) {
+    nav ul {
+      display: flex !important;
+      flex-direction: row;
+      position: static;
+      background: none;
+      padding: 0;
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  /* HERO */
+  #hero {
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(31,95,91,0.72) 0%, rgba(31,95,91,0.35) 55%, rgba(0,0,0,0.05) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-top: 68px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-text {
+    max-width: 560px;
+    color: #fff;
+  }
+
+  .hero-text .section-label { color: rgba(255,255,255,0.8); }
+
+  .hero-text h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    color: #fff;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+
+  .hero-text .hero-sub {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 2rem;
+    line-height: 1.75;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-ctas .cta-white {
+    display: inline-block;
+    background-color: #fff;
+    color: var(--primary);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.85rem 2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .hero-ctas .cta-white:hover { background-color: var(--background); transform: translateY(-2px); }
+
+  /* ABOUT */
+  #apropos {
+    padding: var(--spacing-section) 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-image-wrap {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: visible;
+    height: 380px;
+  }
+
+  .about-image-wrap img {
+    border-radius: var(--radius);
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(31,95,91,0.15);
+  }
+
+  /* corner_frame decoration */
+  .corner-frame {
+    position: relative;
+  }
+  .corner-frame::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 60px;
+    height: 60px;
+    border-top: 3px solid var(--secondary);
+    border-left: 3px solid var(--secondary);
+    border-radius: 2px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .corner-frame::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 60px;
+    height: 60px;
+    border-bottom: 3px solid var(--secondary);
+    border-right: 3px solid var(--secondary);
+    border-radius: 2px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .about-text .section-heading { margin-bottom: 1.25rem; }
+  .about-text p { color: #5a5450; line-height: 1.85; margin-bottom: 1.5rem; }
+
+  .about-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .badge {
+    background-color: rgba(31,95,91,0.08);
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(31,95,91,0.15);
+  }
+
+  /* FEATURED MENU */
+  #carte {
+    padding: var(--spacing-section) 0;
+    background-color: #f4ede0;
+  }
+
+  .menu-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .menu-header .section-text { margin: 0 auto; text-align: center; }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .menu-card {
+    background-color: var(--background);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .menu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--secondary);
+    border-radius: 4px 0 0 4px;
+  }
+
+  .menu-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+
+  .menu-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+  }
+
+  .menu-card p {
+    font-size: 0.95rem;
+    color: #6b6460;
+    line-height: 1.7;
+  }
+
+  .menu-cta-wrap { text-align: center; }
+
+  /* REVIEWS */
+  #avis {
+    padding: var(--spacing-section) 0;
+  }
+
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .review-card {
+    background-color: #fff;
+    border-radius: var(--radius);
+    padding: 2.25rem;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+    position: relative;
+  }
+
+  /* big_quote style */
+  .review-card .big-quote {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--secondary);
+    opacity: 0.25;
+    line-height: 1;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .star { color: #f5a623; font-size: 1.1rem; }
+
+  .review-text {
+    font-size: 0.97rem;
+    color: #4a4642;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+
+  .review-author {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--primary);
+  }
+
+  .review-date {
+    font-size: 0.8rem;
+    color: #9a9490;
+    margin-top: 0.2rem;
+  }
+
+  /* GALLERY */
+  #galerie {
+    padding: var(--spacing-section) 0;
+    background-color: #f4ede0;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* asymmetric gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-item-1 { height: 280px; }
+  .gallery-item-2 { height: 220px; }
+  .gallery-item-3 { height: 220px; }
+
+  /* HOURS & LOCATION */
+  #horaires {
+    padding: var(--spacing-section) 0;
+  }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hours-block h2 { margin-bottom: 2rem; }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hours-table tr {
+    border-bottom: 1px solid rgba(31,95,91,0.1);
+  }
+
+  .hours-table tr:last-child { border-bottom: none; }
+
+  .hours-table td {
+    padding: 0.85rem 0;
+    font-size: 0.97rem;
+  }
+
+  .hours-table td:first-child {
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: capitalize;
+    width: 45%;
+  }
+
+  .hours-table td:last-child { color: #5a5450; }
+
+  .hours-table tr.closed td { color: #b0a8a0; }
+  .hours-table tr.closed td:first-child { color: #b0a8a0; }
+
+  .address-block {
+    background-color: rgba(31,95,91,0.05);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .address-block p {
+    font-size: 0.97rem;
+    color: #5a5450;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .address-block p strong { color: var(--primary); min-width: 20px; }
+
+  .map-embed {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    height: 300px;
+  }
+
+  .map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* CONTACT FORM */
+  #contact {
+    padding: var(--spacing-section) 0;
+    background-color: #f4ede0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info h2 { margin-bottom: 1.25rem; }
+  .contact-info p { color: #5a5450; margin-bottom: 1.5rem; line-height: 1.8; }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.97rem;
+    color: var(--text);
+  }
+
+  .contact-detail .icon {
+    width: 38px;
+    height: 38px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .contact-form-wrap {
+    background-color: #fff;
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid rgba(31,95,91,0.2);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.97rem;
+    color: var(--text);
+    background-color: var(--background);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+
+  .contact-form-wrap .cta { width: 100%; font-size: 1rem; padding: 1rem; }
+
+  /* TRUST SIGNALS */
+  #confiance {
+    padding: var(--spacing-section) 0;
+  }
+
+  .trust-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .trust-icon {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(31,95,91,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+  }
+
+  .trust-item p {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.4;
+    margin-top: 0.6rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: var(--primary);
+    color: rgba(255,255,255,0.85);
+    padding: 3.5rem 0 2rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand h3 {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .footer-links h4 {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links ul { list-style: none; }
+  .footer-links ul li { margin-bottom: 0.6rem; }
+  .footer-links ul li a {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.75);
+    transition: color 0.2s;
+  }
+  .footer-links ul li a:hover { color: #fff; }
+
+  .footer-contact h4 {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+
+  .footer-contact a.cta {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    padding: 0.65rem 1.4rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary);
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* RESPONSIVE 768px */
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-image-wrap { height: 460px; }
+
+    .menu-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 300px 220px;
+    }
+
+    .gallery-item-1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      height: auto;
+    }
+
+    .gallery-item-2 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      height: auto;
+    }
+
+    .gallery-item-3 {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      height: auto;
+    }
+
+    .hours-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .trust-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr;
+    }
+  }
+
+  /* RESPONSIVE 1024px */
+  @media (min-width: 1024px) {
+    .menu-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 200px;
+    }
+
+    .gallery-item-1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      height: auto;
+    }
+
+    .gallery-item-2 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      height: auto;
+    }
+
+    .gallery-item-3 {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+      height: auto;
+    }
+
+    .trust-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+/* ── GARDE-FOU NAV (post-traitement deterministe, pas le LLM) ────────────────
+   Le modele produit typiquement `nav ul.open { flex-direction:column }` SANS
+   media query. Sa specificite (0,2,1) bat la regle desktop `nav ul` (0,0,2)
+   quand celle-ci n'a pas !important sur flex-direction : au retour en desktop
+   apres ouverture du burger, le menu reste empile en colonne (menu casse).
+   Cette regle force l'etat desktop quel que soit l'etat de .open. */
+@media (min-width: 768px) {
+  nav ul, nav ul.open, nav.open ul, nav ul[data-open="true"] {
+    flex-direction: row !important;
+    position: static !important;
+    display: flex !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+  }
+  .burger, button.burger, .nav-toggle, #burger, .burger-menu { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav aria-label="Navigation principale">
+  <a href="#hero" class="nav-logo">Au coin de l'Église</a>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul id="nav-menu" role="list">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#carte">Notre cuisine</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#horaires">Horaires</a></li>
+    <li><a href="#contact" class="cta" aria-label="Réserver votre table">Réserver votre table</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="Accueil">
+  <div class="hero-bg">
+    <img src="assets/hero.jpg" alt="Salle et terrasse du restaurant Au coin de l'Église à Montaigu" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="section-label">Restaurant à Montaigu</span>
+      <h1>Au coin de l'Église</h1>
+      <p class="hero-sub">Votre restaurant convivial au cœur de Montaigu</p>
+      <p>Situé au 11 Rue de l'Église à Montaigu, Au coin de l'Église vous accueille dans une ambiance chaleureuse et sympathique. Venez découvrir une cuisine soignée, un service rapide et une terrasse ombragée pour vos déjeuners et dîners.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta" aria-label="Réserver votre table">Réservez votre table</a>
+        <a href="#carte" class="cta-white" aria-label="Découvrir notre carte">Découvrez notre carte</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos" aria-label="À propos du restaurant">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap corner-frame fade-in">
+        <img src="assets/gallery-1.jpg" alt="Ambiance chaleureuse du restaurant Au coin de l'Église" loading="lazy">
+      </div>
+      <div class="about-text fade-in">
+        <span class="section-label">Bienvenue chez nous</span>
+        <h2 class="section-heading">Un restaurant de village plein de vie</h2>
+        <div class="divider"></div>
+        <p>Au coin de l'Église est un petit bar restaurant qui apporte de l'animation au village de Montaigu. Les plats sont bons et soignés, préparés avec soin par le gérant et son personnel. Que ce soit pour un déjeuner en terrasse ombragée ou un moment convivial entre amis, notre équipe vous réserve un accueil chaleureux et charmant. N'hésitez pas à faire un petit détour, ça vaut vraiment le coup.</p>
+        <p>Retrouvez-nous au <strong>11 Rue de l'Église, 02820 Montaigu</strong>, à deux pas de l'église du village.</p>
+        <div class="about-badges">
+          <span class="badge">Cuisine maison</span>
+          <span class="badge">Terrasse ombragée</span>
+          <span class="badge">Accueil chaleureux</span>
+          <span class="badge">Produits frais</span>
+        </div>
+        <br>
+        <a href="tel:+33782183930" class="cta" aria-label="Appelez-nous pour réserver">Appelez-nous</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTRE CUISINE -->
+<section id="carte" aria-label="Notre cuisine">
+  <div class="container">
+    <div class="menu-header fade-in">
+      <span class="section-label">À table</span>
+      <h2 class="section-heading">Notre cuisine</h2>
+      <div class="divider" style="margin: 0 auto 1.25rem;"></div>
+      <p class="section-text">Nos plats sont préparés avec soin et servis avec le sourire. Venez savourer une cuisine de qualité dans une ambiance conviviale. Pour découvrir notre carte du moment, contactez-nous directement.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card fade-in">
+        <div class="menu-card-icon">🍽️</div>
+        <h3>Plats du jour</h3>
+        <p>Chaque jour, notre chef compose un plat du jour généreux et savoureux, élaboré à partir des produits frais du marché et des saisons.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <div class="menu-card-icon">🥗</div>
+        <h3>Entrées et salades</h3>
+        <p>Des entrées fraîches et colorées pour bien commencer votre repas, préparées avec des légumes de saison et des produits locaux soigneusement sélectionnés.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <div class="menu-card-icon">🍷</div>
+        <h3>Boissons et bar</h3>
+        <p>Notre bar vous propose une sélection de boissons pour accompagner votre repas ou simplement profiter d'un moment de détente en terrasse.</p>
+      </div>
+    </div>
+    <div class="menu-cta-wrap fade-in">
+      <a href="tel:+33782183930" class="cta" aria-label="Appelez-nous pour connaître la carte du jour">Appelez-nous pour la carte du jour</a>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS CLIENTS -->
+<section id="avis" aria-label="Avis de nos clients">
+  <div class="container">
+    <div class="reviews-header fade-in">
+      <span class="section-label">Ils nous font confiance</span>
+      <h2 class="section-heading">Ce que disent nos clients</h2>
+      <div class="divider" style="margin: 0 auto;"></div>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card fade-in">
+        <span class="big-quote" aria-hidden="true">"</span>
+        <div class="review-stars" aria-label="5 étoiles sur 5">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">« Convivial et sympa ce petit bar restaurant apporte de l'animation au village de Montaigu. Les plats sont bons et soignés merci au gérant et au personnel. Je m'adresse au propriétaire des lieux je suis restée qq jours dans l'appartement fort bien aménagé, situé au dessus du café. Il serait souhaitable voir indispensable d'apporter un aménagement à l'escalier (j'ai 80 ans) faire une rampe.... et également pour les jeunes enfants une barrière en haut de cet escalier. »</p>
+        <p class="review-author">Claudine Zych</p>
+        <p class="review-date">il y a 2 semaines</p>
+      </div>
+
+      <div class="review-card fade-in">
+        <span class="big-quote" aria-hidden="true">"</span>
+        <div class="review-stars" aria-label="5 étoiles sur 5">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">« J'ai testé ce restaurant pour un déjeuner et j'ai été ravi. Servi en terrasse ombragée, le service est rapide, les plats sont de qualité et le personnel très accueillant. Je ne peux que recommander ! »</p>
+        <p class="review-author">paul deshayes</p>
+        <p class="review-date">il y a un mois</p>
+      </div>
+
+      <div class="review-card fade-in">
+        <span class="big-quote" aria-hidden="true">"</span>
+        <div class="review-stars" aria-label="5 étoiles sur 5">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">« Que du positif dans ce petit restaurant bien sympathique 😻😻😻 La cuisine est au top et l'accueil, chaleureux et charmant. N'hésitez pas à faire un petit détour, ça vaut vraiment le coup. »</p>
+        <p class="review-author">Evelyne Tristram</p>
+        <p class="review-date">il y a 2 semaines</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie" aria-label="Galerie photos du restaurant">
+  <div class="container">
+    <div class="gallery-header fade-in">
+      <span class="section-label">En images</span>
+      <h2 class="section-heading">Découvrez notre ambiance</h2>
+      <div class="divider" style="margin: 0 auto 0.5rem;"></div>
+      <p class="section-text" style="margin: 0 auto;">Découvrez l'ambiance de notre restaurant en photos.</p>
+    </div>
+    <div class="gallery-grid" style="margin-top: 2.5rem;">
+      <div class="gallery-item gallery-item-1 corner-frame fade-in">
+        <img src="assets/hero.jpg" alt="Salle du restaurant Au coin de l'Église à Montaigu" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item-2 fade-in">
+        <img src="assets/gallery-1.jpg" alt="Plats soignés servis au restaurant Au coin de l'Église" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item-3 fade-in">
+        <img src="assets/gallery-2.jpg" alt="Terrasse ombragée du restaurant Au coin de l'Église" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORAIRES & ADRESSE -->
+<section id="horaires" aria-label="Horaires et adresse du restaurant">
+  <div class="container">
+    <div class="fade-in" style="text-align:center; margin-bottom: 3rem;">
+      <span class="section-label">Nous trouver</span>
+      <h2 class="section-heading">Horaires et adresse</h2>
+      <div class="divider" style="margin: 0 auto;"></div>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-block fade-in">
+        <h3 style="font-size:1.3rem; margin-bottom:1.5rem; color:var(--primary);">Nos horaires d'ouverture</h3>
+        <table class="hours-table" aria-label="Tableau des horaires d'ouverture">
+          <tbody>
+            <tr>
+              <td>Lundi</td>
+              <td>09:00 – 14:30, 16:00 – 21:00</td>
+            </tr>
+            <tr class="closed">
+              <td>Mardi</td>
+              <td>Fermé</td>
+            </tr>
+            <tr>
+              <td>Mercredi</td>
+              <td>09:00 – 14:30, 16:00 – 21:00</td>
+            </tr>
+            <tr>
+              <td>Jeudi</td>
+              <td>09:00 – 14:30, 16:00 – 21:00</td>
+            </tr>
+            <tr>
+              <td>Vendredi</td>
+              <td>09:00 – 14:30, 16:00 – 21:00</td>
+            </tr>
+            <tr>
+              <td>Samedi</td>
+              <td>09:00 – 14:30, 16:00 – 21:00</td>
+            </tr>
+            <tr>
+              <td>Dimanche</td>
+              <td>09:00 – 14:30, 16:00 – 21:00</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <a href="tel:+33782183930" class="cta" aria-label="Appelez-nous pour réserver">Appelez-nous</a>
+      </div>
+      <div class="fade-in">
+        <h3 style="font-size:1.3rem; margin-bottom:1.5rem; color:var(--primary);">Nous trouver</h3>
+        <div class="address-block">
+          <p><strong>📍</strong> 11 Rue de l'Église, 02820 Montaigu, France</p>
+          <p><strong>📞</strong> <a href="tel:+33782183930" style="color: var(--primary); font-weight:600;">+33 7 82 18 39 30</a></p>
+          <p><strong>🅿️</strong> Parking à proximité disponible.</p>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=11+Rue+de+l%27%C3%89glise,+02820+Montaigu,+France&output=embed"
+            title="Carte Google Maps – Au coin de l'Église, 11 Rue de l'Église, 02820 Montaigu"
+            loading="lazy"
+            aria-label="Carte Google Maps du restaurant Au coin de l'Église à Montaigu">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE DE CONTACT -->
+<section id="contact" aria-label="Formulaire de contact et réservation">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <span class="section-label">Écrivez-nous</span>
+        <h2 class="section-heading">Contactez-nous</h2>
+        <div class="divider"></div>
+        <p>Une question, une réservation ? Écrivez-nous ou appelez-nous directement. Nous serons ravis de vous accueillir au coin de l'Église.</p>
+        <div class="contact-detail">
+          <div class="icon" aria-hidden="true">📞</div>
+          <div>
+            <strong>Téléphone</strong><br>
+            <a href="tel:+33782183930" style="color: var(--primary);">+33 7 82 18 39 30</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon" aria-hidden="true">📍</div>
+          <div>
+            <strong>Adresse</strong><br>
+            11 Rue de l'Église, 02820 Montaigu, France
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon" aria-hidden="true">🕐</div>
+          <div>
+            <strong>Fermé le mardi</strong><br>
+            Ouvert tous les autres jours de 09h00 à 21h00.
+          </div>
+        </div>
+        <br>
+        <a href="tel:+33782183930" class="cta" aria-label="Appelez-nous directement">Appelez-nous directement</a>
+      </div>
+      <div class="contact-form-wrap fade-in">
+        <h3 style="font-family: var(--font-heading); color: var(--primary); font-size: 1.4rem; margin-bottom: 1.5rem;">Envoyez-nous un message</h3>
+        <form action="https://checkout.kamkod.com/contact" method="POST" aria-label="Formulaire de contact">
+          <input type="hidden" name="lead_id" value="ChIJhziDQQC76UcRqTKovTYe9kY">
+          <div class="form-group">
+            <label for="name">Votre nom</label>
+            <input type="text" id="name" name="name" placeholder="Jean Dupont" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="email">Votre adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="jean.dupont@email.fr" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" placeholder="Bonjour, je souhaite réserver une table pour..." required aria-required="true"></textarea>
+          </div>
+          <button type="submit" class="cta" aria-label="Envoyer votre message">Envoyer votre message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNAUX DE CONFIANCE -->
+<section id="confiance" aria-label="Pourquoi choisir Au coin de l'Église">
+  <div class="container">
+    <div class="trust-header fade-in">
+      <span class="section-label">Nos engagements</span>
+      <h2 class="section-heading">Pourquoi nous choisir</h2>
+      <div class="divider" style="margin: 0 auto;"></div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">🍴</div>
+        <p>Plats bons et soignés</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">⚡</div>
+        <p>Service rapide</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">😊</div>
+        <p>Personnel très accueillant</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">☀️</div>
+        <p>Terrasse ombragée</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">🤝</div>
+        <p>Ambiance conviviale et sympathique</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer aria-label="Pied de page">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Au coin de l'Église</h3>
+        <p>Votre restaurant convivial au cœur de Montaigu. Cuisine soignée, terrasse ombragée et accueil chaleureux vous attendent.</p>
+        <br>
+        <a href="tel:+33782183930" class="cta" aria-label="Appelez-nous pour réserver">Appelez-nous</a>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#carte">Notre cuisine</a></li>
+          <li><a href="#avis">Avis clients</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#horaires">Horaires</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>11 Rue de l'Église<br>02820 Montaigu, France</p>
+        <p><a href="tel:+33782183930" style="color: rgba(255,255,255,0.85);">+33 7 82 18 39 30</a></p>
+        <p>Fermé le mardi.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Au coin de l'Église – 11 Rue de l'Église, 02820 Montaigu, France – +33782183930. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // BURGER MENU
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+
+  burger.addEventListener('click', function() {
+    const isOpen = navMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close menu on link click (mobile)
+  navMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // FADE-IN SCROLL ANIMATION
+  const fadeEls = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  fadeEls.forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // NAV SCROLL EFFECT
+  const navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+      navEl.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+    } else {
+      navEl.style.boxShadow = 'none';
+    }
+  });
+</script>
+<!-- KAMKOD:DEMO_START -->
+<script>
+(function(){
+  var URL = 'https://checkout.kamkod.com/d/ChIJhziDQQC76UcRqTKovTYe9kY';
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('a, button, [role="button"]');
+    if(!el || el.closest('form')) return;               /* formulaire -> endpoint contact */
+    if(el.classList.contains('cta')) { e.preventDefault(); window.location.href = URL; return; }
+    if(el.closest('header nav, nav')) return;           /* navigation interne de la démo */
+    var a = e.target.closest('a');
+    if(!a) return;                                      /* bouton seul hors nav: on laisse */
+    var href = a.getAttribute('href') || '';
+    if(href.charAt(0) === '#') return;                  /* ancres de section */
+    if(/^https?:|^\/\//i.test(href)) return;
+    e.preventDefault(); window.location.href = URL;     /* tel:, mailto:, javascript:… */
+  }, true);
+})();
+</script>
+<div id="kamkod-demo-banner" data-pid="ChIJhziDQQC76UcRqTKovTYe9kY" data-echeance="1789809822579"
+     style="position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 -2px 14px rgba(0,0,0,.4);">
+  <div style="max-width:920px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;">
+    <span style="flex:1;min-width:200px;font-size:13px;opacity:.8;">Aperçu de votre futur site</span>
+    <span id="kk-offre" style="font-size:14px;font-variant-numeric:tabular-nums;">Prix de lancement : <b>49,00 €</b> — encore 47h 59min 59s</span>
+    <a href="https://checkout.kamkod.com/d/ChIJhziDQQC76UcRqTKovTYe9kY" style="background:#EA580C;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;">Activer mon site</a>
+  </div>
+</div>
+<script>
+/* COMPTE À REBOURS DE LA BANNIÈRE (demande Alex 11/09) : le prospect passe le plus
+   de temps SUR SON SITE — l'urgence doit être ici, pas seulement sur la page de
+   vente après un clic de plus. Même mécanique que la page : fenêtre 48 h, prix de
+   lancement, et le prix plein annoncé une fois la fenêtre passée.
+   L'échéance est EMBARQUÉE à l'injection (aucune dépendance réseau) puis
+   resynchronisée depuis /api/offre toutes les 2 min (une réinitialisation de
+   fenêtre doit se propager à un site déjà déployé). */
+(function(){
+  var b = document.getElementById('kamkod-demo-banner');
+  if(!b) return;
+  var ach = parseInt(b.getAttribute('data-echeance') || '0', 10);
+  var pid = b.getAttribute('data-pid');
+  var el  = document.getElementById('kk-offre');
+  if(!el) return;
+  var T_LAUNCH = "Prix de lancement : <b>%PRIX%</b> — encore %TEMPS%";
+  var T_OVER   = "Le déploiement est passé à <b>%PRIX%</b>";
+  var PRIX_L   = "49,00 €";
+  var PRIX_O   = "98,00 €";
+  function deux(n){ return (n < 10 ? '0' : '') + n; }
+  function hms(s){
+    var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+    return h + 'h ' + deux(m) + 'min ' + deux(x) + 's';
+  }
+  function rendu(){
+    var s = ach ? Math.floor((ach - Date.now()) / 1000) : 0;
+    if(s > 0){
+      el.innerHTML = T_LAUNCH.replace('%TEMPS%', hms(s)).replace('%PRIX%', PRIX_L);
+    } else {
+      el.innerHTML = T_OVER.replace('%PRIX%', PRIX_O);
+    }
+  }
+  rendu();
+  setInterval(rendu, 1000);
+  function sync(){
+    try{
+      fetch('https://checkout.kamkod.com/api/offre/' + pid, {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if(d && d.echeance_ms){ ach = d.echeance_ms; }
+          if(d && d.prix_lancement){ PRIX_L = d.prix_lancement; }
+          if(d && d.prix_apres){ PRIX_O = d.prix_apres; }
+          rendu();
+        })
+        .catch(function(){});
+    }catch(e){}
+  }
+  setTimeout(sync, 5000);
+  setInterval(sync, 120000);
+})();
+</script>
+<script>
+/* KAMKOD-MESURE v1 — page="site" | mesure agrégée : aucun cookie, aucun identifiant. */
+(function(){
+  try{
+    var PID="ChIJhziDQQC76UcRqTKovTYe9kY", PAGE="site";
+    var URL="https://checkout.kamkod.com/api/comportement/"+PID;
+    var vis=0, lastIn=Date.now(), scrollMax=0, clics=0, cta=0, premier=1, vues={};
+    var mobile=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent||'');
+    function cache(){ return document.visibilityState==='hidden'; }
+    function temps(){ var n=Date.now(); if(!cache() && lastIn){ vis+=n-lastIn; } lastIn=n; }
+    function majScroll(){
+      var h=Math.max(1,(document.documentElement.scrollHeight||0)-window.innerHeight);
+      var p=Math.round(Math.min(100,((window.pageYOffset||window.scrollY||0)/h)*100));
+      if(p>scrollMax){ scrollMax=p; }
+    }
+    function majSections(){
+      var hs=document.querySelectorAll('h1,h2,h3');
+      for(var i=0;i<hs.length && i<40;i++){
+        var r=hs[i].getBoundingClientRect();
+        if(r.top<window.innerHeight && r.bottom>0){
+          var t=(hs[i].textContent||'').replace(/\s+/g,' ').trim().slice(0,60);
+          if(t){ vues[t]=(vues[t]||0)+1; }
+        }
+      }
+    }
+    function estCta(el){ var a=null,n=el;while(n&&n.tagName!=='A'){n=n.parentNode;}
+      a=n;if(!a||!a.getAttribute)return false;
+      var h=a.getAttribute('href')||'';
+      return h.indexOf('/d/')>-1||h.indexOf('checkout.kamkod.com')>-1; }
+    function envoi(force){
+      try{
+        temps();
+        var secs=Object.keys(vues);
+        if(!force && !secs.length && !vis && !clics && !scrollMax){ return; }
+        var corps=JSON.stringify({v:1, page:PAGE, debut:premier?1:0, temps_ms:Math.round(vis),
+          scroll_max:scrollMax, clics:clics, cta_clics:cta, mobile:mobile, sections:secs});
+        var ok=false;
+        try{
+          if(navigator.sendBeacon){ ok=navigator.sendBeacon(URL, corps); }
+          if(!ok){
+            var x=new XMLHttpRequest();
+            x.open('POST',URL,true);
+            x.setRequestHeader('Content-Type','text/plain;charset=UTF-8');
+            x.send(corps); ok=true;
+          }
+        }catch(e){}
+        if(ok){ premier=0; vis=0; clics=0; cta=0; vues={}; }
+      }catch(e){}
+    }
+    window.addEventListener('scroll',function(){try{majScroll();majSections();}catch(e){}},{passive:true});
+    document.addEventListener('click',function(ev){
+      try{ clics++; if(estCta(ev.target)){ cta++; } }catch(e){}
+    },true);
+    document.addEventListener('visibilitychange',function(){
+      try{ if(cache()){ envoi(false); } else { lastIn=Date.now(); } }catch(e){}
+    });
+    window.addEventListener('pagehide',function(){try{envoi(true);}catch(e){}});
+    setTimeout(function(){try{majScroll();majSections();envoi(false);}catch(e){}},3000);
+    setInterval(function(){try{majSections();envoi(false);}catch(e){}},30000);
+  }catch(e){}
+})();
+</script>
+<!-- KAMKOD:DEMO_END -->
+</body>
+</html>
